@@ -1,0 +1,12 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+df = pd.read_csv("./iris.csv")
+species=df["variety"].unique()
+for i in species:
+x = df.loc[df["variety"]==i]["sepal.length"]
+y = df.loc[df["variety"]==i]["petal.width"]
+plt.scatter(x,y)
+plt.legend(species)
+plt.xlabel("sepal.length cm")
+plt.ylabel("petal.width cm")
+plt.show(
